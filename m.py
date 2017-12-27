@@ -1,4 +1,4 @@
-#学习之用
+#学习之用 修饰器就是嵌套的内部函数里引用了外部函数的变量
 import sys
 import re
 import time
