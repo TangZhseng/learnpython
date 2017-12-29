@@ -3,7 +3,7 @@
 #今日学习'类'的日记
 
 class f1:
-    def __init__(self):   #构造方法将在对象化的同时进行执行  #不能被子类调用
+    def __init__(self):   #构造方法将在对象化的同时进行执行
         self.name=1
         self.age=2
         print(self.name)
@@ -13,12 +13,13 @@ class f1:
 
 class s2(f1):
     def opp(self):
+        print(self.name)
         print('lpp')
 
 class s1(f1):
     def opp(self):      #重写父类中的函数，不执行父类中的
         print('app')
-        super(s1,self).opp() #执行父类中的方法之一
+        #super(s1,self).opp() #执行父类中的方法之一
         f1.opp(self)       #执行父类中的方法之一
 
 class ss(s1,s2):           #继承多类时，调用同名函数，从左到右，从外到里。
@@ -31,4 +32,4 @@ if __name__=='__main__': #作为测试的逻辑步骤，只在模块文件内调
    S=s1()
    S.opp()
    SS=ss()
-   SS.opp()  #将会调用S1中的OPP函数 如果S1中没有OPP函数将会执行S2中的OPP，如果S2中再没有才会执行F1的OPP函数
+   SS.opp() #将会调用S1中的OPP函数 如果S1中没有OPP函数将会执行S2中的OPP，如果S2中再没有才会执行F1的OPP函数
